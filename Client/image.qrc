@@ -1,0 +1,39 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/denglu.png</file>
+        <file>images/Line_Account.png</file>
+        <file>images/Line_Password.png</file>
+        <file>images/Seen.png</file>
+        <file>images/Unseen.png</file>
+        <file>images/background_image.png</file>
+        <file>images/SignUp_image.png</file>
+        <file>images/SignUp_right.png</file>
+        <file>images/deleteAvatar.png</file>
+        <file>images/header_image.png</file>
+        <file>selectHeaderImages/headerimage1.png</file>
+        <file>selectHeaderImages/headerimage2.png</file>
+        <file>selectHeaderImages/headerimage3.png</file>
+        <file>image/background_image.png</file>
+        <file>image/gif_one.gif</file>
+        <file>image/jay.png</file>
+        <file>image/ListMode.png</file>
+        <file>image/listWidget_background_image1.png</file>
+        <file>image/logo.png</file>
+        <file>image/LRC_background_image.png</file>
+        <file>image/Muted.png</file>
+        <file>image/Next.png</file>
+        <file>image/Pause.png</file>
+        <file>image/Play.png</file>
+        <file>image/Prev.png</file>
+        <file>image/Sequentialplay.png</file>
+        <file>image/Shuffleplay.png</file>
+        <file>image/Singlecycle.png</file>
+        <file>image/volume.png</file>
+        <file>image/VolumeHigh.png</file>
+        <file>image/VolumeLow.png</file>
+        <file>images/AI_chat.png</file>
+        <file>image/LRCShow.png</file>
+        <file>image/heart.png</file>
+        <file>image/AI_background.png</file>
+    </qresource>
+</RCC>

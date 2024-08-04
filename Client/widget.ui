@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>527</width>
+    <height>361</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Widget</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#label_up
+{
+background-color: rgb(85, 255, 255);
+}
+QWidget{
+background-color: rgb(255, 255, 255);
+}</string>
+  </property>
+  <widget class="QPushButton" name="pushButton_Login">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>310</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>华康方圆体W7(P)</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#pushButton_Login{
+background-color: qlineargradient(spread:pad, x1:0.52, y1:1, x2:0.54, y2:0, 
+stop:0.0112994 rgba(210, 188, 235, 255), 
+stop:1 rgba(255, 255, 255, 255));
+color: rgb(50, 50, 50);
+ 
+border:0px groove gray;border-radius:7px;
+padding:2px 4px;
+font: 14pt &quot;华康方圆体W7(P)&quot;;
+
+}
+
+
+QPushButton#pushButton_Login:hover {
+    background-color: lightgreen;
+    color: white;
+	border-radius: 10px; /* 确保在hover状态下也有相同的圆角 */
+}
+
+QPushButton#pushButton_Login:pressed {
+    background-color: darkgreen;
+    color: white;
+	border-radius: 10px; /* 确保在pressed状态下也有相同的圆角 */
+}</string>
+   </property>
+   <property name="text">
+    <string>登录</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_username">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>130</y>
+     <width>351</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>账户</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_passwd">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>230</y>
+     <width>351</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>请输入密码</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_SignUp">
+   <property name="geometry">
+    <rect>
+     <x>360</x>
+     <y>310</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>华康方圆体W7(P)</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#pushButton_SignUp {
+    background-color: qlineargradient(spread:pad, x1:0.52, y1:1, x2:0.54, y2:0, 
+stop:0.0112994 rgba(210, 188, 235, 255), 
+stop:1 rgba(255, 255, 255, 255));
+color: rgb(50, 50, 50);
+ 
+border:0px groove gray;border-radius:
+7px;padding:2px 4px;
+font: 14pt &quot;华康方圆体W7(P)&quot;;
+}
+
+QPushButton#pushButton_SignUp:hover {
+    background-color: lightgreen;
+    color: white;
+	border-radius: 10px; /* 确保在pressed状态下也有相同的圆角 */
+}
+
+QPushButton#pushButton_SignUp:pressed {
+    background-color: darkgreen;
+    color: white;
+	border-radius: 10px; /* 确保在pressed状态下也有相同的圆角 */
+}</string>
+   </property>
+   <property name="text">
+    <string>注册</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_up">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>-1</y>
+     <width>531</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_account">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>130</y>
+     <width>32</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel#label_account {
+	
+	image: url(:/images/Line_Account.png);
+    border: 1px solid gray;
+    border-radius: 15px; /* 设置为半径的一半 */
+    min-width: 30px;  /* 设置最小宽度 */
+    min-height: 30px; /* 设置最小高度 */
+    max-width: 30px;  /* 设置最大宽度 */
+    max-height: 30px; /* 设置最大高度 */
+    text-align: center; /* 使文本居中 */
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_password">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>230</y>
+     <width>32</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel#label_password {
+	
+	image: url(:/images/Line_Password.png);
+    border: 1px solid gray;
+    border-radius: 15px; /* 设置为半径的一半 */
+    min-width: 30px;  /* 设置最小宽度 */
+    min-height: 30px; /* 设置最小高度 */
+    max-width: 30px;  /* 设置最大宽度 */
+    max-height: 30px; /* 设置最大高度 */
+    text-align: center; /* 使文本居中 */
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_unseen">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>230</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#pushButton_unseen {
+
+    border: 1px solid gray;
+    background-color: rgba(0, 0, 0, 0); /* 完全透明 */
+    border: none; /* 去掉边框 */
+    border-radius: 15px; /* 设置为半径的一半 */
+    min-width: 30px;  /* 设置最小宽度 */
+    min-height: 30px; /* 设置最小高度 */
+    max-width: 30px;  /* 设置最大宽度 */
+    max-height: 30px; /* 设置最大高度 */
+    text-align: center; /* 使文本居中 */
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="checkBox_rememberPasswd">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>280</y>
+     <width>111</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>记住密码</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="NetworkConfiguration">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>310</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>华康方圆体W7(P)</family>
+     <pointsize>7</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#NetworkConfiguration{
+background-color: qlineargradient(spread:pad, x1:0.52, y1:1, x2:0.54, y2:0, 
+stop:0.0112994 rgba(210, 188, 235, 255), 
+stop:1 rgba(255, 255, 255, 255));
+color: rgb(50, 50, 50);
+ 
+border:0px groove gray;border-radius:7px;
+padding:2px 4px;
+font: 7pt &quot;华康方圆体W7(P)&quot;;
+
+}
+
+
+QPushButton#NetworkConfiguration:hover {
+    background-color: lightgreen;
+    color: white;
+	border-radius: 10px; /* 确保在hover状态下也有相同的圆角 */
+}
+
+QPushButton#NetworkConfiguration:pressed {
+    background-color: darkgreen;
+    color: white;
+	border-radius: 10px; /* 确保在pressed状态下也有相同的圆角 */
+}</string>
+   </property>
+   <property name="text">
+    <string>网络配置</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_headerimage">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>70</y>
+     <width>52</width>
+     <height>52</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#pushButton_headerimage {
+    border: 1px solid gray;
+    border-radius: 25px; /* 使 QLabel 变为圆形 */
+    min-width: 50px;  /* 设置最小宽度 */
+    min-height: 50px; /* 设置最小高度 */
+    max-width: 50px;  /* 设置最大宽度 */
+    max-height: 50px; /* 设置最大高度 */
+    text-align: center; /* 使文本居中 */
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

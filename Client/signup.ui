@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SignUp</class>
+ <widget class="QMainWindow" name="SignUp">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>611</width>
+    <height>431</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label_accountSignUp">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>346</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>新账号注册</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_account1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>130</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>100</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>账号: </string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_account1">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>130</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit#lineEdit_account1 
+{border-radius:14px;
+					padding: 2 30 2 10;
+        			border-width: 1px;
+        			border-style: solid;
+       				border-color: black;
+}</string>
+    </property>
+    <property name="maxLength">
+     <number>30</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_passwd1">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>170</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>100</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>100</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>密码: </string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_passwd1">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>180</y>
+      <width>171</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit#lineEdit_passwd1
+ {border-radius:14px;
+					padding: 2 10 2 16;
+        			border-width: 1px;
+        			border-style: solid;
+       				border-color: black;
+}</string>
+    </property>
+    <property name="maxLength">
+     <number>30</number>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::PasswordEchoOnEdit</enum>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_passwd2">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>230</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit#lineEdit_passwd2
+ {border-radius:14px;
+					padding: 2 30 2 10;
+        			border-width: 1px;
+        			border-style: solid;
+       				border-color: black;
+}</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_unseenSignUp_1">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>180</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#pushButton_unseenSignUp_1{
+
+    border: 1px solid gray;
+    background-color: rgba(0, 0, 0, 0); /* 完全透明 */
+    border: none; /* 去掉边框 */
+    border-radius: 15px; /* 设置为半径的一半 */
+    min-width: 30px;  /* 设置最小宽度 */
+    min-height: 30px; /* 设置最小高度 */
+    max-width: 30px;  /* 设置最大宽度 */
+    max-height: 30px; /* 设置最大高度 */
+    text-align: center; /* 使文本居中 */
+}
+QPushButton#pushButton_unseenSignUp_1:hover {  
+    /* 悬停状态样式 */  
+    background-color: rgba(100, 255, 100, 0.5); /* 淡绿色，半透明 */  
+    /* 可以添加其他悬停状态的样式 */  
+}  
+  
+QPushButton#pushButton_unseenSignUp_1:pressed {  
+    /* 按下状态样式 */  
+    background-color: rgb(0, 100, 0); /* 深绿色 */  
+    /* 可以添加其他按下状态的样式 */  
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_unseenSignUp_2">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>230</y>
+      <width>30</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#pushButton_unseenSignUp_2{
+
+    border: 1px solid gray;
+    background-color: rgba(0, 0, 0, 0); /* 完全透明 */
+    border: none; /* 去掉边框 */
+    border-radius: 15px; /* 设置为半径的一半 */
+    min-width: 30px;  /* 设置最小宽度 */
+    min-height: 30px; /* 设置最小高度 */
+    max-width: 30px;  /* 设置最大宽度 */
+    max-height: 30px; /* 设置最大高度 */
+    text-align: center; /* 使文本居中 */
+}
+QPushButton#pushButton_unseenSignUp_2:hover {  
+    /* 悬停状态样式 */  
+    background-color: rgba(100, 255, 100, 0.5); /* 淡绿色，半透明 */  
+    /* 可以添加其他悬停状态的样式 */  
+}  
+  
+QPushButton#pushButton_unseenSignUp_2:pressed {  
+    /* 按下状态样式 */  
+    background-color: rgb(0, 100, 0); /* 深绿色 */  
+    /* 可以添加其他按下状态的样式 */  
+}
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_passwd2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>230</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>再次确认密码</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_signupfinal">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>320</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#pushButton_signupfinal
+ {border-radius:18px;
+        				  border-width: 1px;
+        				  border-style: solid;
+       					  border-color: black;
+}
+QPushButton#pushButton_signupfinal:hover {  
+    /* 悬停状态样式 */  
+    background-color: rgba(100, 255, 100, 0.5); /* 淡绿色，半透明 */  
+    /* 可以添加其他悬停状态的样式 */  
+}  
+  
+QPushButton#pushButton_signupfinal:pressed {  
+    /* 按下状态样式 */  
+    background-color: rgb(0, 100, 0); /* 深绿色 */  
+    /* 可以添加其他按下状态的样式 */  
+}</string>
+    </property>
+    <property name="text">
+     <string>注册</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="backtomain">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>320</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#backtomain
+ {border-radius:18px;
+        				  border-width: 1px;
+        				  border-style: solid;
+       					  border-color: black;
+}
+QPushButton#backtomain:hover {  
+    /* 悬停状态样式 */  
+    background-color: rgba(100, 255, 100, 0.5); /* 淡绿色，半透明 */  
+    /* 可以添加其他悬停状态的样式 */  
+}  
+  
+QPushButton#backtomain:pressed {  
+    /* 按下状态样式 */  
+    background-color: rgb(0, 100, 0); /* 深绿色 */  
+    /* 可以添加其他按下状态的样式 */  
+}</string>
+    </property>
+    <property name="text">
+     <string>返回</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_indicator">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>280</y>
+      <width>16</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCheckBox::#CheckBox_indicator {
+    border: 1px solid black;
+    width: 14px;
+    height: 14px;
+    border-radius: 8px;
+    background-color: white; /* 默认背景色 */
+};
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_readme">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>280</y>
+      <width>251</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_signup_right">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>-2</y>
+      <width>221</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/images/SignUp_right.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>60</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>昵称</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_nickname">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>60</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit#lineEdit_nickname
+{border-radius:14px;
+					padding: 2 30 2 10;
+        			border-width: 1px;
+        			border-style: solid;
+       				border-color: black;
+}</string>
+    </property>
+    <property name="maxLength">
+     <number>30</number>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>611</width>
+     <height>17</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
