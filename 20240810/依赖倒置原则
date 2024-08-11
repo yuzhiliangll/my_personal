@@ -1,0 +1,113 @@
+依赖倒置原则（Dependency Inversion Principle, DIP）是面向对象设计中的一个重要原则，它是 SOLID 原则中的一部分。它旨在减少模块之间的耦合，使系统更具灵活性和可维护性。具体来说，依赖倒置原则包括两个核心要点：
+
+高层模块不应该依赖于低层模块，二者都应该依赖于抽象（接口或抽象类）。 也就是说，系统中的高层组件（比如业务逻辑）不应该直接依赖于低层组件（比如具体的实现细节），而应该依赖于抽象层，这样可以降低高层和低层之间的耦合度。
+
+抽象不应该依赖于细节，细节应该依赖于抽象。 这意味着抽象层（接口或抽象类）不应该依赖于具体实现，而具体实现应该依赖于抽象层。这样可以确保系统的扩展和修改更为容易。
+
+举个例子：
+
+假设你有一个系统需要处理邮件发送功能。在没有遵循依赖倒置原则的情况下，你可能会直接在业务逻辑层中创建一个邮件发送的具体实现对象，比如 SMTPClient。这就意味着你的业务逻辑层直接依赖于 SMTPClient 的实现细节。
+
+遵循依赖倒置原则，你可以创建一个 EmailSender 接口，并让 SMTPClient 实现这个接口。在业务逻辑层中，你只依赖于 EmailSender 接口，而不直接依赖于 SMTPClient。这样，如果将来你需要改变邮件发送的实现，比如改为使用 SendGrid，你只需要修改具体的实现类，而业务逻辑层不需要做任何改变。
+
+通过这种方式，系统的高层模块（业务逻辑层）和低层模块（具体的邮件发送实现）之间的依赖关系就被倒置了，从而实现了更好的模块化和灵活性。
+
+
+当然！我们可以用 C++ 举一个例子来说明依赖倒置原则。
+
+假设你有一个图书管理系统，需要发送通知邮件。我们会使用依赖倒置原则来设计这个系统。首先，我们看看没有应用依赖倒置原则的情况：
+
+
+未遵循依赖倒置原则的设计
+#include <iostream>
+#include <string>
+
+// 低层模块：具体的邮件发送实现
+class SmtpEmailSender {
+public:
+    void sendEmail(const std::string& recipient, const std::string& subject, const std::string& body) {
+        // 实现SMTP邮件发送
+        std::cout << "Sending email via SMTP to " << recipient << " with subject " << subject << " and body " << body << std::endl;
+    }
+};
+
+// 高层模块：业务逻辑层
+class BookService {
+private:
+    SmtpEmailSender emailSender; // 直接依赖具体实现
+
+public:
+    void notifyUser(const std::string& userEmail, const std::string& bookTitle) {
+        std::string subject = "New Book Available!";
+        std::string body = "The book '" + bookTitle + "' is now available.";
+        emailSender.sendEmail(userEmail, subject, body);
+    }
+};
+
+
+在这个设计中，BookService 直接依赖于 SmtpEmailSender，这意味着如果你想更改邮件发送实现（例如使用不同的邮件服务），你需要修改 BookService 类的代码。
+
+遵循依赖倒置原则的设计
+我们将创建一个抽象的邮件发送接口，并让 SmtpEmailSender 实现这个接口。业务逻辑层则依赖于这个接口。
+
+
+#include <iostream>
+#include <string>
+
+// 抽象层：邮件发送接口
+class IEmailSender {
+public:
+    virtual ~IEmailSender() = default;
+    virtual void sendEmail(const std::string& recipient, const std::string& subject, const std::string& body) = 0;
+};
+
+// 低层模块：具体的邮件发送实现
+class SmtpEmailSender : public IEmailSender {
+public:
+    void sendEmail(const std::string& recipient, const std::string& subject, const std::string& body) override {
+        // 实现SMTP邮件发送
+        std::cout << "Sending email via SMTP to " << recipient << " with subject " << subject << " and body " << body << std::endl;
+    }
+};
+
+// 另一个具体的邮件发送实现
+class SendGridEmailSender : public IEmailSender {
+public:
+    void sendEmail(const std::string& recipient, const std::string& subject, const std::string& body) override {
+        // 实现SendGrid邮件发送
+        std::cout << "Sending email via SendGrid to " << recipient << " with subject " << subject << " and body " << body << std::endl;
+    }
+};
+
+// 高层模块：业务逻辑层
+class BookService {
+private:
+    IEmailSender* emailSender; // 依赖于抽象接口而非具体实现
+
+public:
+    BookService(IEmailSender* emailSender) : emailSender(emailSender) {}
+
+    void notifyUser(const std::string& userEmail, const std::string& bookTitle) {
+        std::string subject = "New Book Available!";
+        std::string body = "The book '" + bookTitle + "' is now available.";
+        emailSender->sendEmail(userEmail, subject, body);
+    }
+};
+在这个设计中，BookService 类依赖于 IEmailSender 接口，而不是 SmtpEmailSender。这允许你在运行时将不同的 IEmailSender 实现注入到 BookService 中，例如 SmtpEmailSender 或 SendGridEmailSender，而不需要修改 BookService 类的代码。
+
+使用示例
+int main() {
+    SmtpEmailSender smtpSender;
+    SendGridEmailSender sendGridSender;
+
+    BookService bookService1(&smtpSender);
+    bookService1.notifyUser("user1@example.com", "Design Patterns");
+
+    BookService bookService2(&sendGridSender);
+    bookService2.notifyUser("user2@example.com", "Modern C++");
+
+    return 0;
+}
+这样，BookService 可以与不同的邮件发送实现一起使用，而无需修改业务逻辑层的代码，从而遵循了依赖倒置原则。
+
+
