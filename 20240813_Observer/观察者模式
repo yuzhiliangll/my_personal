@@ -1,0 +1,151 @@
+在设计模式中也有一种类似的描述行为的模式，叫做观察者模式。观察者模式允许我们定义一种订阅机制，可在对象事件发生时通知所有的观察者对象，使它们能够自动更新。观察者模式还有另外一个名字叫做“发布-订阅”模式。
+
+观察者模式在日常生活中也很常见，比如：
+
+使用的社交软件，当关注的博主更新了内容，会收到提示信息
+购买的商品被送到菜鸟驿站，会收到驿站发送的提示信息
+订阅了报刊，每天/每月都会收到新的报纸或者杂志
+
+
+2.1 发布者
+摩根斯的新闻社是一个报纸发行机构，内容大多是与当前的世界格局和各地发生的事件有关，其他人也可以发报纸，为了避免竞争可以更换一下题材，比如海贼们的八卦新闻，不管是哪一类都需要满足以下的需求：
+
+添加订阅者，将所有的订阅者存储起来
+删除订阅者，将其从订阅者列表中删除
+将消息发送给订阅者（发通知）
+根据上述信息，我们就可以先创建出一个发布者的抽象类：
+
+
+================================================================================================================================
+观察者模式（Observer Pattern）是一种行为型设计模式，主要用于构建一个对象（主题）与一组依赖于它的对象（观察者）之间的关系。当主题对象的状态发生改变时，所有依赖于它的观察者都会被通知并自动更新。以下是一个详细的示例，使用 C++ 编写：
+
+1. 定义观察者接口
+首先，定义一个观察者接口，用于在主题对象状态变化时接收更新：
+// Observer.h
+#ifndef OBSERVER_H
+#define OBSERVER_H
+
+class Observer {
+public:
+    virtual ~Observer() {}
+    virtual void update(int state) = 0;
+};
+
+#endif // OBSERVER_H
+
+
+2. 定义主题接口
+接着，定义一个主题接口，允许注册、注销观察者并通知它们：
+// Subject.h
+#ifndef SUBJECT_H
+#define SUBJECT_H
+
+#include "Observer.h"
+#include <vector>
+
+class Subject {
+public:
+    virtual ~Subject() {}
+    virtual void addObserver(Observer* observer) = 0;
+    virtual void removeObserver(Observer* observer) = 0;
+    virtual void notifyObservers() = 0;
+};
+
+#endif // SUBJECT_H
+
+
+3. 实现具体主题
+实现一个具体的主题类，该类维护状态，并在状态改变时通知所有观察者：
+// ConcreteSubject.h
+#ifndef CONCRETE_SUBJECT_H
+#define CONCRETE_SUBJECT_H
+
+#include "Subject.h"
+
+class ConcreteSubject : public Subject {
+private:
+    std::vector<Observer*> observers;
+    int state;
+
+public:
+    void setState(int newState) {
+        state = newState;
+        notifyObservers();
+    }
+
+    int getState() const {
+        return state;
+    }
+
+    void addObserver(Observer* observer) override {
+        observers.push_back(observer);
+    }
+
+    void removeObserver(Observer* observer) override {
+        observers.erase(std::remove(observers.begin(), observers.end(), observer), observers.end());
+    }
+
+    void notifyObservers() override {
+        for (Observer* observer : observers) {
+            observer->update(state);
+        }
+    }
+};
+
+#endif // CONCRETE_SUBJECT_H
+
+4. 实现具体观察者
+实现一个具体的观察者类，该类会响应主题状态的变化：
+// ConcreteObserver.h
+#ifndef CONCRETE_OBSERVER_H
+#define CONCRETE_OBSERVER_H
+
+#include "Observer.h"
+#include <iostream>
+
+class ConcreteObserver : public Observer {
+private:
+    int observerState;
+
+public:
+    void update(int state) override {
+        observerState = state;
+        std::cout << "Observer state updated to: " << observerState << std::endl;
+    }
+};
+
+#endif // CONCRETE_OBSERVER_H
+
+// main.cpp
+#include "ConcreteSubject.h"
+#include "ConcreteObserver.h"
+
+int main() {
+    ConcreteSubject subject;
+    
+    ConcreteObserver observer1;
+    ConcreteObserver observer2;
+
+    subject.addObserver(&observer1);
+    subject.addObserver(&observer2);
+
+    std::cout << "Setting state to 5." << std::endl;
+    subject.setState(5);
+
+    std::cout << "Setting state to 10." << std::endl;
+    subject.setState(10);
+
+    return 0;
+}
+运行结果
+Setting state to 5.
+Observer state updated to: 5
+Observer state updated to: 5
+Setting state to 10.
+Observer state updated to: 10
+Observer state updated to: 10
+
+
+
+
+
