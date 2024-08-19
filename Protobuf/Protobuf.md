@@ -176,9 +176,6 @@ $ protoc -I path .proto文件 --cpp_out=输出路径(存储生成的c++文件)
 我们可以在.proto文件所在目录执行protoc命令，并生成到当前目录：
 
 SHELL
-1
-2
-3
 $ protoc ./Person.proto --cpp_out=.
 # 或者使用 -I 参数
 $ protoc -I ./ Person.proto --cpp_out=.
@@ -268,7 +265,7 @@ message Person
 语法格式如下:
 
 PROTOBUF
-1
+
 import "要使用的proto文件的名字";
 假设现在我有一个proto文件Address.proto，里边记录了地址信息：
 
