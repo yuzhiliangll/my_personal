@@ -34,3 +34,4 @@ clean:
 show:
 	@echo $(wildcard ./*.c)
 	@echo $(patsubst %.c, %.o, $(wildcard ./*.c))
+# ....
