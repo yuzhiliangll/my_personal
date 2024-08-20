@@ -46,3 +46,4 @@ clean:
 show:
 	@echo $(wildcard ./*.cpp)
 	@echo $(patsubst %.cpp, %.o, $(wildcard ./*.cpp))
+# @ : 隐藏命令
